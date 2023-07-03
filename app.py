@@ -17,6 +17,10 @@ def test():
 def checks():
     return jsonify({'message':'Flask Api is tested'})
 
+@app.route('/flask')
+def checks():
+    return jsonify({'Project Author':'Nelson Nwajie'})
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=5000)
 
