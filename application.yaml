@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flaskapp-jly3
+  namespace: argocd
+spec:
+  project: flask-project
+  source:
+    repoURL: https://github.com/nelson2000/flask-app-Jly3-argo-manifest.git
+    targetRevision: master
+    path: ./
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: frontend
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
