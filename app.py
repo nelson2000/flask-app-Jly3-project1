@@ -10,20 +10,20 @@ def home():
 
 @app.route('/api')
 def test():
-    return jsonify({'message':'Flask Api is running'})
+    return jsonify({'message':'Flask Api is running great'})
 
 
 @app.route('/api/test')
 def checks():
-    return jsonify({'message':'Flask Api is tested'})
+    return jsonify({'message':'Flask Api is tested and Ok'})
 
 @app.route('/flask')
-def checks():
+def author():
     return jsonify({'Project Author':'Nelson Nwajie'})
 
 @app.route('/api/flask')
-def checks():
-    return jsonify({'Project Author':'Nelson Nwajie'})
+def status():
+    return 'The project is just for fun'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=5000)
