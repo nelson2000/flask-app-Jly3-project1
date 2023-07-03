@@ -8,7 +8,7 @@ node {
 
         stage("Build Image") {
 
-            app = docker.build("nwajienelson/flaskApi")
+            app = docker.build("nwajienelson/flaskapp-jly3")
         }
 
 
