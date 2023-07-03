@@ -3,12 +3,12 @@ node {
         def app
 
         stage("clone repository") {
-            checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/nelson2000/ms-python-flask-sample.git']])
+            checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/nelson2000/flask-app-Jly3-project1.git']])
         }
 
         stage("Build Image") {
 
-            app = docker.build("nwajienelson/flaskApi")
+            app = docker.build("nwajienelson/flaskapp-jly3")
         }
 
 
@@ -34,7 +34,7 @@ node {
 
             echo "triggering updatemanifestsjob"
 
-            build job: 'UpdateManifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
+            build job: 'flask-job2', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
         }
     
 
