@@ -34,7 +34,7 @@ node {
 
             echo "triggering updatemanifestsjob"
 
-            build job: 'UpdateManifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
+            build job: 'flask-job2', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
         }
     
 
