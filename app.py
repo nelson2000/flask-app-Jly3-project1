@@ -14,7 +14,7 @@ def test():
 
 
 @app.route('/api/test')
-def test():
+def checks():
     return jsonify({'message':'Flask Api is tested'})
 
 if __name__ == '__main__':
